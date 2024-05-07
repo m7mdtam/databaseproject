@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.black.withOpacity(0.4),
+            color: Colors.black.withOpacity(0.5),
           ),
           Center(
             child: LoginPage(),
