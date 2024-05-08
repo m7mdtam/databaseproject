@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
 
 class LoginPage extends StatelessWidget {
@@ -11,6 +12,9 @@ class LoginPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(
+            height: 250,
+          ),
           ClipRRect(
             borderRadius: BorderRadius.circular(30),
             child: Container(
@@ -19,13 +23,19 @@ class LoginPage extends StatelessWidget {
                 child: Image(
                     fit: BoxFit.fill,
                     image: AssetImage(
-                      "lib/images/3.jpeg",
+                      "lib/images/logo22.jpeg",
                     ))),
           ),
-          SizedBox(height: 30.0),
+          SizedBox(height: 0.5),
+          Text(
+            'CYPRUS AIRLINES',
+            style: TextStyle(color: Colors.white, fontSize: 30),
+          ),
+          SizedBox(height: 18.0),
           TextField(
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
+              prefixIcon: Icon(Icons.email),
               hintText: 'Enter your email',
               filled: true,
               fillColor: Colors.white,
@@ -37,6 +47,7 @@ class LoginPage extends StatelessWidget {
           SizedBox(height: 15.0),
           TextField(
             decoration: InputDecoration(
+              prefixIcon: Icon(Icons.lock),
               hintText: 'Enter your password',
               filled: true,
               fillColor: Colors.white,
@@ -47,17 +58,38 @@ class LoginPage extends StatelessWidget {
             obscureText: true,
           ),
           SizedBox(height: 20.0),
+          ElevatedButton(
+            style: ButtonStyle(
+              foregroundColor: MaterialStateProperty.all<Color>(
+                  const Color.fromARGB(255, 0, 0, 0)),
+            ),
+            onPressed: () {},
+            child: Text('Login'),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('Login'),
+              Text(
+                'Not a member ? ',
+                style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    decorationColor: Colors.white,
+                    fontSize: 17,
+                    color: Colors.white,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold),
               ),
-              SizedBox(width: 10.0),
-              ElevatedButton(
+              SizedBox(width: 0.0),
+              TextButton(
+                style: ButtonStyle(
+                  foregroundColor:
+                      MaterialStateProperty.all<Color>(Colors.blue),
+                ),
                 onPressed: () {},
-                child: Text('Sign up'),
+                child: Text(
+                  style: TextStyle(fontSize: 18),
+                  'Sign up',
+                ),
               ),
             ],
           ),
