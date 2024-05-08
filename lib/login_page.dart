@@ -24,6 +24,7 @@ class LoginPage extends StatelessWidget {
           ),
           SizedBox(height: 30.0),
           TextField(
+            keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               hintText: 'Enter your email',
               filled: true,
