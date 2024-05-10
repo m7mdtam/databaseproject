@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_field, prefer_const_constructors_in_immutables
 
+import 'package:databaseproject/home_page.dart';
 import 'package:databaseproject/login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -39,8 +40,11 @@ class _SignUpState extends State<SignUp> {
         Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(
+                height: 100,
+              ),
               TextFormField(
                 style: TextStyle(color: Colors.white),
                 validator: (String? value) {
@@ -147,10 +151,10 @@ class _SignUpState extends State<SignUp> {
                   ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => LoginPage()));
+                          MaterialPageRoute(builder: (context) => HomePage()));
                     },
                     child: Text(
-                      'Back',
+                      'Back home',
                       style: TextStyle(color: Colors.black, fontSize: 20),
                     ),
                   ),
@@ -165,6 +169,36 @@ class _SignUpState extends State<SignUp> {
                 ],
               ),
               SizedBox(height: 0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Already a member ? ',
+                    style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.white,
+                        fontSize: 17,
+                        color: Colors.white,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(width: 0.0),
+                  TextButton(
+                    style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.blue),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => LoginPage()));
+                    },
+                    child: Text(
+                      style: TextStyle(fontSize: 18),
+                      'Sign in',
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

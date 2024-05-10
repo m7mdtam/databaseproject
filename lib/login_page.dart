@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, avoid_unnecessary_containers
 
+import 'package:databaseproject/home_page.dart';
 import 'package:databaseproject/sign_up.dart';
 import 'package:flutter/material.dart';
 // ignore: unnecessary_import
@@ -31,6 +32,7 @@ class LoginPage extends StatelessWidget {
             ),
             ClipRRect(
               borderRadius: BorderRadius.circular(30),
+              // ignore: sized_box_for_whitespace
               child: Container(
                   height: 100,
                   width: 100,
@@ -72,13 +74,29 @@ class LoginPage extends StatelessWidget {
               obscureText: true,
             ),
             SizedBox(height: 20.0),
-            ElevatedButton(
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all<Color>(
-                    const Color.fromARGB(255, 0, 0, 0)),
-              ),
-              onPressed: () {},
-              child: Text('Login'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromARGB(255, 0, 0, 0)),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                  },
+                  child: Text('Back home'),
+                ),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromARGB(255, 0, 0, 0)),
+                  ),
+                  onPressed: () {},
+                  child: Text('Login'),
+                ),
+              ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
